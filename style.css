@@ -1,0 +1,52 @@
+.container {
+    width:1000px;
+    height:100%;
+    margin: 0 auto;
+}
+.header {
+    background-color:#660066;
+    padding: 0 10px;
+}
+.content {
+    padding 0 10px;
+}
+.footer {
+    background-color:#660066;
+    text-align:center;
+}
+.menubar {
+    width:100%;
+    background-color:#EEEEEE;
+}
+.menu {
+    float:left;
+    padding:0 10px;
+}
+.menutitle {
+    float:left;
+}
+.menutitle:hover {
+    float:left;
+}
+.drop {
+    position:fixed;
+    visibility:hidden;
+}
+.menutitle:hover+.drop, .drop:hover {
+    position:fixed;
+    background-color:#EEEEEE;
+    border:0px solid gray;
+    visibility:visible;
+    padding: 0 10px;
+    margin: 0 0 0 -10px;
+    list-style-type:none;
+}
+
+dl.resume { }
+	
+.resume dt
+{
+	margin: 1em 0 0 0;
+}
+	
+.resume dd { }
