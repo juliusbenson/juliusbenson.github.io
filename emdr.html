@@ -37,7 +37,7 @@
 		}
 	  },1000);
 	  
-	  $("#textbox").html("click to begin the guide"); // Add some text in these quotes to enable the guide.
+	  $("#textbox").html("click or tap to begin the guide."); // Add some text in these quotes to enable the guide.
 	  var i = 0;
 	  function advance(){
 		var message = ""
@@ -45,8 +45,11 @@
 			case 0:
 				message = "follow the cursor with your eyes. try to keep your head still."
 				break;
-			default:
+			case 1:
 				message = "you have reached the end of the guide. you may reload the page to begin again."
+                break;
+            default:
+                message = ""
 		}
 		$("#textbox").fadeOut(function() {$(this).text(message)}).fadeIn();
 		i++
