@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+	  body{
+		color:white;
+	  }
+      #cursor{
+        background:#fff;
+        position:absolute;
+		width:20px;
+		height:20px;
+        top:50%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  </head>
+  <body bgcolor="black" onclick="advance()">
+    <audio id="lbAud" src="http://juliusbenson.github.io/l.wav" autostart="false" ></audio>
+    <audio id="rbAud" src="http://juliusbenson.github.io/r.wav" autostart="false" ></audio>
+    <div id="cursor"></div>
+	<div id="textbox" style="text-align:center; position:absolute; top:50%; width:99%"></div>
+    <script>
+	  var left = true;
+	  setInterval(function(){
+	    if (left) {
+		  setTimeout(document.getElementById("lbAud").play(), 980);
+          $("#cursor").animate({left: "90%"}, 980);
+		  left = false;
+		}
+		else {
+		  setTimeout(document.getElementById("rbAud").play(), 980);
+          $("#cursor").animate({left: "10%"}, 980);
+		  left = true;
+		}
+	  },1000);
+	  
+	  $("#textbox").html(""); // Add some text in these quotes to enable the guide.
+	  var i = 0;
+	  function advance(){
+		var message = ""
+		switch(i){
+			case 0:
+				message = "follow the cursor with your eyes. try to keep your head still."
+				break;
+			default:
+				message = "you have reached the end of the guide. you may reload the page to begin again."
+		}
+		$("#textbox").fadeOut(function() {$(this).text(message)}).fadeIn();
+		i++
+	  }
+    </script>
+  </body>
+</html>
